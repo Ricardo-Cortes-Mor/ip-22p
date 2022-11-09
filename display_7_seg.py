@@ -22,10 +22,8 @@ led_e = Pin(e, Pin.OUT)
 led_f = Pin(f, Pin.OUT)
 led_g = Pin(g, Pin.OUT)
 
-mem32[GPIO_OUT_REG] = (1 << a) | (1 << b) | (1 << c) | (1 << d) | (1 << e) | (1 << f) | (1 << g)
+mem32[GPIO_OUT_REG] = (1 << a) | (1 << b) | (1 << c) | (1 << d) | (1 << e) | (1 << f)
 
-mem32[GPIO_OUT_REG] ^=  (1 << g) #0
-time.sleep(1)
 while True:
             
     mem32[GPIO_OUT_REG] ^= (1 << a) | (1 << d) | (1 << e) | (1 << f) #1
